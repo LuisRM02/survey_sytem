@@ -5,6 +5,16 @@
 @section('content')
 
 <form action="{{ route('vehicles.update', $vehicle->id) }}" method="POST">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     @csrf
     @method('PUT')
     <table>
@@ -108,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 suggestions.innerHTML = '';
 
                 if (data.length === 0) {
-                    // No se encontraron clientes → sugerir registrar
+                    
                     let div = document.createElement('div');
                     div.textContent = "Cliente no encontrado, registrar cliente";
                     div.style.padding = "5px";

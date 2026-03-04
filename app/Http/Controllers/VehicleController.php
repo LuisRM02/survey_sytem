@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 class VehicleController extends Controller
 {
     public function index(){
-        $vehicles = Vehicle::orderBy('id', 'desc')->with('client')->paginate(2);
+        $vehicles = Vehicle::orderBy('id', 'desc')->with('client')->paginate(10);
         return view('vehicles.index', compact('vehicles'));
     }
 
@@ -20,9 +20,9 @@ class VehicleController extends Controller
 
     public function store(Request $request){
         $validated = $request->validate([
-            'plate' => 'required|string|max:6',
+            'plate' => 'required|string|max:6|unique:vehicles,plate',
             'model' => 'required|string|max:140',
-            'manufacturing_year' => 'required|digits:4|integer',
+            'manufacturing_year' => 'required|digits:4|integer|min:1900|max:' . date('Y'),
             'client_id' => 'required|integer|exists:clients,id',
         ]);
 
@@ -37,7 +37,7 @@ class VehicleController extends Controller
 
     public function update(Request $request, $id){
         $validated = $request->validate([
-            'plate' => 'required|string|max:6',
+            'plate' => 'required|string|max:6|unique:vehicles,plate',
             'model' => 'required|string|max:140',
             'manufacturing_year' => 'required|digits:4|integer',
             'client_id' => 'required|integer|exists:clients,id',

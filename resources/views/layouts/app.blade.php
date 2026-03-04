@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Sistema de Encuesta')</title>
+    <title>@yield('title', 'Sistema de Encuestas')</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -62,8 +62,8 @@
     <nav>
         <ul>
             <li><a href="/">Inicio</a></li>
-            <li><a href="{{ route('clients.index') }}">Clientes</a></li>
             <li><a href="{{ route('vehicles.index') }}">Vehiculos</a></li>
+            <li><a href="{{ route('clients.index') }}">Clientes</a></li>
         </ul>
     </nav>
 

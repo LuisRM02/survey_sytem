@@ -10,7 +10,7 @@ class ClientController extends Controller
 {
     public function index(){
         //$objClient = new Client();
-        $clients = Client::orderBy('id', 'desc')->paginate(2);
+        $clients = Client::orderBy('id', 'desc')->paginate(10);
         return view('clients.index', compact('clients'));
     }
 
@@ -60,8 +60,12 @@ class ClientController extends Controller
 
     public function destroy($id){
         $client = Client::findOrFail($id);
+        if ($client->vehicles()->count() > 0) {
+            return redirect()->route('clients.index')
+                ->with('error', 'No se puede eliminar el cliente porque tiene vehículos asociados.');
+        }
         $client->delete();
-        return redirect()->route('clients.index');
+        return redirect()->route('clients.index')->with('success', 'Cliente eliminado correctamente.');;
     }
 
 

@@ -10,6 +10,9 @@
         {{ session('success') }}
     </div>
 @endif
+@if(session('error'))
+    <div class="alert alert-danger">{{ session('error') }}</div>
+@endif
 <button
     onclick="window.location.href='{{ route('clients.create') }}'"
 >
