@@ -30,7 +30,7 @@
             <td><input type="number" name="manufacturing_year" value="{{ old('manufacturing_year') }}" required></td>
         </tr>
         <tr>
-            <td><input type="number" name="client_id" id="client_id" value="{{ old('client_id') }}" required hidden></td>
+            <td><input type="number" name="client_id" id="client_id" value="{{ old('client_id') }}" min="1901"  max="{{ date('Y') }}" required hidden></td>
         </tr>
         
         <tr>

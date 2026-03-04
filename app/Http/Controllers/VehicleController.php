@@ -22,7 +22,7 @@ class VehicleController extends Controller
         $validated = $request->validate([
             'plate' => 'required|string|max:6|unique:vehicles,plate',
             'model' => 'required|string|max:140',
-            'manufacturing_year' => 'required|digits:4|integer|min:1900|max:' . date('Y'),
+            'manufacturing_year' => 'required|digits:4|integer|min:1901|max:' . date('Y'),
             'client_id' => 'required|integer|exists:clients,id',
         ]);
 
@@ -39,7 +39,7 @@ class VehicleController extends Controller
         $validated = $request->validate([
             'plate' => 'required|string|max:6|unique:vehicles,plate',
             'model' => 'required|string|max:140',
-            'manufacturing_year' => 'required|digits:4|integer',
+            'manufacturing_year' => 'required|digits:4|integer|min:1901|max:' . date('Y'),
             'client_id' => 'required|integer|exists:clients,id',
         ]);
 
