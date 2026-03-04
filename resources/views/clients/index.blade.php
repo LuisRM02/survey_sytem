@@ -11,7 +11,7 @@
     </div>
 @endif
 <button
-    onclick="window.location.href=`clients/create`"
+    onclick="window.location.href='{{ route('clients.create') }}'"
 >
     Nuevo Cliente
 </button>

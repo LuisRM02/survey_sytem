@@ -12,4 +12,10 @@ class Vehicle extends Model
         'manufacturing_year',
         'client_id'
     ];
+
+    public $timestamps = false;
+
+    public function client() {
+        return $this->belongsTo(Client::class);
+    }
 }

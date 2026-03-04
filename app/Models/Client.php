@@ -16,5 +16,9 @@ class Client extends Model
     ];
 
     public $timestamps = false;
+
+    public function vehicles() {
+        return $this->hasMany(Vehicle::class);
+    }
     
 }

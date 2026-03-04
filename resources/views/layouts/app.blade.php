@@ -63,7 +63,7 @@
         <ul>
             <li><a href="/">Inicio</a></li>
             <li><a href="{{ route('clients.index') }}">Clientes</a></li>
-            
+            <li><a href="{{ route('vehicles.index') }}">Vehiculos</a></li>
         </ul>
     </nav>
 

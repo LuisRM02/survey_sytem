@@ -34,7 +34,7 @@ class ClientController extends Controller
 
         Client::create($validated);
         return redirect()->route('clients.index')->with('success', 'Cliente creado correctamente');
-        //echo "ya recibi los datos";
+        //echo "datos recibidos";
     }
 
     public function edit($id){

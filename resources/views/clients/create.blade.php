@@ -46,7 +46,7 @@
 </form>
 
 <button
-        onclick="window.location.href=`../clients`"
+        onclick="window.location.href='{{ route('clients.index') }}'"
 >
     Salir
 </button>
