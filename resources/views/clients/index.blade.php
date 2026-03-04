@@ -51,5 +51,7 @@
     @endforeach
 </table>
 
+{{ $clients->links('pagination::simple-bootstrap-4') }}
+
 
 @endSection
