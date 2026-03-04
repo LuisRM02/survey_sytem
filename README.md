@@ -12,7 +12,7 @@
 ## Instalación y configuración ========================================
 
 1. Clona el repositorio:
-```bash
+
 git https://github.com/LuisRM02/survey_system.git
 cd survey_system
 
