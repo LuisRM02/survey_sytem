@@ -33,7 +33,7 @@ class ClientController extends Controller
         ]);
 
         Client::create($validated);
-        return redirect()->route('clients.index');
+        return redirect()->route('clients.index')->with('success', 'Cliente creado correctamente');
         //echo "ya recibi los datos";
     }
 
@@ -43,9 +43,19 @@ class ClientController extends Controller
     }
 
     public function update(Request $request, $id){
+        $validated = $request->validate([
+            'document_type' => 'required|in:Dni,Ruc,Carnet de Extranjeria',
+            'document_number' => 'required|regex:/^[A-Za-z0-9]{8,12}$/',
+            'first_name' => 'required|string|max:100',
+            'last_name' => 'required|string|max:100',
+            'email' => 'required|email|max:140',
+            'phone_number' => 'required|regex:/^[0-9]{6,9}$/',
+        ]);
+
         $client = Client::findOrFail($id);
-        //$client->update($request->all());
-        return redirect()->route('clients.index');
+        $client->update($validated);
+
+        return redirect()->route('clients.index')->with('success', 'Cliente actualizado correctamente');
     }
 
     public function destroy($id){

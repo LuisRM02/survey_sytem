@@ -5,6 +5,11 @@
 @section('content')
 
 <h1>Lista de clientes</h1>
+@if(session('success'))
+    <div style="padding:10px; background-color: #d4edda; color: #155724; border-radius: 5px; margin-bottom: 10px;">
+        {{ session('success') }}
+    </div>
+@endif
 <button
     onclick="window.location.href=`clients/create`"
 >
