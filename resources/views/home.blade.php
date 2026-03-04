@@ -3,6 +3,6 @@
 @section('title', 'Página de Inicio')
 
 @section('content')
-    <h1>Survey system</h1>
+    <h1>Sistema de Encuesta</h1>
 @endSection
 
