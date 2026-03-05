@@ -14,6 +14,7 @@
 1. Clona el repositorio:
 
 git https://github.com/LuisRM02/survey_system.git
+
 cd survey_system
 
 2. Instala dependencias:
@@ -43,10 +44,12 @@ http://127.0.0.1:8000
     - Completa los datos del vehiculo
     - selecciona el tipo de documento del cliente
     - digita el numero de documento del cliente
-        -el sistema buscara automaticamente clientes que coincidan luego de digitar 2 numeros, si no los encuntra te pedira crearlos. Ojo, el sistema compara tanto el tipo como el numero de documento. Ejem: Si un DNI que empieza con "987.." es buscado pero con el tipo RUC, no lo encontrara.
+        -el sistema buscara automaticamente clientes que coincidan luego de digitar 2 numeros, si no los encuntra te pedira crearlos. Ojo, el sistema compara tanto el tipo como el numero          de documento. Ejem: Si un DNI que empieza con "987.." es buscado pero con el tipo RUC, no lo encontrara.
 
 
 ## Estructura de la BBDD ========================================
+<img width="402" height="623" alt="DER_DBDRIAGRAM" src="https://github.com/user-attachments/assets/969f562c-f83a-4e50-8a82-d687a10b4924" />
+
 1. Crear BD con el nombre "survey_system":
     CREATE DATABASE survey_system;
 
